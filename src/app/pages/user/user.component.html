@@ -1,0 +1,11 @@
+<p>USER COMPONENT</p>
+<app-button label="Add User" color="success" [icon]="true" (btnClick)="openDialogAddUser()"></app-button>
+<app-table [columns]="tableColumns" [dataSource]="userService.users$ | async" (clickOnItem)="onClickUser($event)"></app-table>
+
+<ng-template #formUserTemplate>
+  <app-form-user></app-form-user>
+</ng-template>
+
+<ng-template #formEditUserTemplate>
+    <app-edit-form-user></app-edit-form-user>
+</ng-template>

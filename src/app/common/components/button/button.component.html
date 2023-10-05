@@ -1,0 +1,7 @@
+
+<button mat-raised-button [color]="color" [routerLink]="routerLink" (click)="btnClick.emit()">
+  <ng-container *ngIf="icon">
+    <mat-icon>add</mat-icon>
+  </ng-container>
+  {{label}}
+</button>

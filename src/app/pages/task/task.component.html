@@ -1,0 +1,7 @@
+<p>TASK COMPONENT</p>
+<app-button label="Add Task" color="success" [icon]="true" (btnClick)="openDialogAddTask()"></app-button>
+<app-table [columns]="tableColumns" [dataSource]="(taskService.tasks$ | async)" (clickOnItem)="onClickTask($event)"></app-table>
+
+<ng-template #formTaskTemplate>
+  <app-form-task></app-form-task>
+</ng-template>

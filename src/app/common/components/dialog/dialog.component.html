@@ -1,0 +1,13 @@
+<h2 mat-dialog-title>{{ data.title }}:{{data.userId ? data.userId : ''}}</h2>
+<mat-dialog-content>
+  <ng-container [ngTemplateOutlet]="data.dialogContent"> </ng-container>
+</mat-dialog-content>
+<!--[disabled]="dialogService.disabledAcceptButton$ | async"-->
+<mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>
+    {{ data.acceptButtonTitle }}
+  </button>
+  <button *ngIf="data.declineButtonTitle" [mat-dialog-close]="false" mat-button mat-dialog-close>
+    {{ data.declineButtonTitle }}
+  </button>
+</mat-dialog-actions>

@@ -1,0 +1,15 @@
+<form [formGroup]="userService.formEditUser">
+    <mat-form-field appearance="legacy">
+        <!-- <mat-label>Legacy form field</mat-label> -->
+        <input matInput placeholder="User Name" formControlName="name"/>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Assigned task</mat-label>
+        <mat-select formControlName="assignedTaskId">
+            <mat-option *ngFor="let task of allTasks$ | async" [value]="task.id">
+                {{task.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</form>
